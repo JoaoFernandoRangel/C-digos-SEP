@@ -227,41 +227,16 @@ d) O vetor de tensões V.
 % Definindo os valores base de tensão e potência
 S_base = 100e6;    % Potência base em VA (100 MVA)
 V_base = 138e3;    % Tensão base em volts (138 kV)
-Z_base = S_base^2/V_base;
+I_base = S_base/V_base;
+Z_base = V_base/I_base;
 %Linhas de transmissão
 LTa = LinhaT(0.12,0.92,30);
 LTb = LinhaT(0.19,1.84,10);
-
 % Criando os objetos dos transformadores
-Ta = Trafo(138e3, 69e3, 41.5e6, 5.5);
+Ta = Trafo(138e3/V_base, 69e3/V_base, 41.5e6/S_base, 5.5);
 Tb = Trafo(69e3, 13.8e3, 33e6, 7);
 Tc = Trafo(69e3, 34e3, 24e6, 5); 
 %calcularPU(obj, Vbase, Pbase, Zbase)
-Ta = calcularPU(Ta,V_base,S_base,Z_base);
-Ta.Zpu
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
