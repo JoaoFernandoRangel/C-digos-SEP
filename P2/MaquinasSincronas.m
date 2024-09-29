@@ -148,6 +148,7 @@ If = I1+I2+I3;
 Ibase = Snovo/(sqrt(3)*220e3);
 If_real = abs(If)*Ibase
 %%
+%3.13
 close all
 clear all
 clc

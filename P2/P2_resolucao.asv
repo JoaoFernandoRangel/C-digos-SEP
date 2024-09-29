@@ -69,21 +69,17 @@ close all
 clear all
 clc
 %Questão 4
+
 Vb = 34.5e3;
 Sb = 500e6;
-Ib = Sb/(sqrt(3)*Vb);
+Ib = 
 Xd = 1i*2;
 Vt = fasor(1,0);
-Ia = fasor_rad(8530/Ib,-acos(0.85));
-Ei = Vt + Ia*Xd;
-moduloEi = abs(Ei);
-faseEi = rad2deg(angle(Ei))
-plot_3_fasores(Ei,Vt,Ia)
-S = sqrt(3)*Vt*Ia
-P = real(S)
-Q = imag(S)
-gama_novo = rad2deg(asin(sin(angle(Ei))/1.15))
-plot_4_fasores(Vt,Ei,Ia,fasor(Ei,gama_novo))
+Ia = 
+
+
+
+
 
 
 
