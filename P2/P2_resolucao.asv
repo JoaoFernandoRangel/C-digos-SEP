@@ -47,8 +47,8 @@ G1 = struct('Sn',50e6,'Vn',13.8e3,'Xd',8/100);
 TA = struct('Sn',60e6,'V1',13.8e3,'V2',138e3,'X',0.06);
 TB = struct('Sn',30e6,'V1',138e3,'V2',69e3,'X',0.06);
 TC = struct('Sn',50e6,'V1',138e3,'V2',13.8e3,'X',0.07);
-LTa = 1.9 + 1i*4
-LTb = 2.85 +1i*6
+LTa = (1.9 + 1i*4)/Zb
+LTb = (2.85 +1i*6)/Zb
 Vb1 = Vb;
 Vb2 = Vb1/(TA.V2/TA.V1);
 Vb3 = Vb2/(TB.V2/TB.V1);
@@ -83,7 +83,8 @@ S = sqrt(3)*Vt*Ia
 P = real(S)
 Q = imag(S)
 gama_novo = rad2deg(asin(sin(angle(Ei))/1.15))
-plot_4_fasores(Vt,Ei,Ia,fasor(Ei,gama_novo))
+Ei_novo = fasor(Ei,gama_novo)
+plot_4_fasores(Vt,Ei,Ia,Ei_novo)
 %%
 close all
 clear all
@@ -110,7 +111,7 @@ Vb = 345e3;
 Ib = Sb/(sqrt(3)*Vb);
 Zb = 1i*Vb/Ib;
 
-Zp_pu = Zp/Zb
+Zp_pu = Zp/Zb 
 Zs_pu = Zs/Zb
 Zt_pu = Zt/Zb
 

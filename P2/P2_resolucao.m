@@ -47,8 +47,8 @@ G1 = struct('Sn',50e6,'Vn',13.8e3,'Xd',8/100);
 TA = struct('Sn',60e6,'V1',13.8e3,'V2',138e3,'X',0.06);
 TB = struct('Sn',30e6,'V1',138e3,'V2',69e3,'X',0.06);
 TC = struct('Sn',50e6,'V1',138e3,'V2',13.8e3,'X',0.07);
-LTa = 1.9 + 1i*4
-LTb = 2.85 +1i*6
+LTa = (1.9 + 1i*4)/Zb
+LTb = (2.85 +1i*6)/Zb
 Vb1 = Vb;
 Vb2 = Vb1/(TA.V2/TA.V1);
 Vb3 = Vb2/(TB.V2/TB.V1);
@@ -71,12 +71,12 @@ clc
 %Questão 4
 Vb = 34.5e3;
 Sb = 500e6;
-Ib = Sb/(sqrt(3)*Vb);
+Ib = Sb/(sqrt(3)*Vb)
 Xd = 1i*2;
 Vt = fasor(1,0);
 Ia = fasor_rad(8530/Ib,-acos(0.85));
 Ei = Vt + Ia*Xd;
-moduloEi = abs(Ei);
+moduloEi = abs(Ei)
 faseEi = rad2deg(angle(Ei))
 plot_3_fasores(Ei,Vt,Ia)
 S = sqrt(3)*Vt*Ia
@@ -114,6 +114,12 @@ Zb = 1i*Vb/Ib;
 Zp_pu = Zp/Zb 
 Zs_pu = Zs/Zb
 Zt_pu = Zt/Zb
+%%
+close all
+clear all
+clc
+
+
 
 
 
