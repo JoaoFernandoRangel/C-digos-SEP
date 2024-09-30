@@ -1,5 +1,7 @@
 %{
 Aluno: João Fernando Rangel Guimarães
+NÃO EXECUTE NO RUN LA EM CIMA!
+Execute cada seção apertando CTRL+Enter.
 %}
 %Questão 1
 clear all
@@ -43,9 +45,9 @@ clc
 Sb = 200e6;
 Vb = 345e3;
 
-Xps = 1i*0.09*(Sb/33e6)*(138e3/Vb)^2;
-Xpt = 1i*0.07*(Sb/33e6)*(138e3/Vb)^2;
-Xst = 1i*0.12*(Sb/20e6)*(4*34.5e3/Vb)^2;
+Xps = 1i*0.09*(Sb/33e6)*(138e3/Vb)^2
+Xpt = 1i*0.07*(Sb/33e6)*(138e3/Vb)^2
+Xst = 1i*0.12*(Sb/20e6)*(4*34.5e3/Vb)^2
 Zp = 0.5*(Xps+Xpt-Xst)
 Zs = 0.5*(Xps+Xst-Xpt)
 Zt = 0.5*(Xpt+Xst-Xps)
@@ -75,7 +77,7 @@ P_pu = abs(Vt)*abs(Ei)*sin(angle(Ei))/abs(Xd)
 Q_pu = (abs(Vt)/abs(Xd))*(abs(Ei)*cos(angle(Ei))-abs(Vt))
 %Desenvolvimento da conta na folha de prova
 Nova_fase = rad2deg(asin(sin(angle(Ei))/0.9))
-
+Q_pu_novo = (abs(Vt)/abs(Xd))*(abs(0.9*Ei)*cos(angle(0.9*Ei))-abs(Vt))
 %% Questão 3
 close all
 clear all
