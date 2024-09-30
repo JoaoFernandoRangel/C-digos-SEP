@@ -1,3 +1,6 @@
+%{
+Aluno: João Fernando Rangel Guimarães
+%}
 %Questão 1
 clear all
 close all
@@ -79,29 +82,16 @@ clear all
 clc
 deltaV = 0.03;
 Xd = fasor(0.05,90);
-c = 1/(1+deltaV);
+ca = 1/(1+deltaV);
 Yeq = 1/Xd;
 
-Y = [ Yeq              -c*Yeq;
-      Yeq*abs(c)^2     -c*Yeq;]
+%Letra A
+Ya = [ Yeq              -ca*Yeq;
+      Yeq*abs(ca)^2     -conj(ca)*Yeq;]
+
+cb = fasor(1,1);
+
+Yb = [ Yeq              -cb*Yeq;
+      Yeq*abs(cb)^2     -conj(cb)*Yeq;]
 
 
-
-
-%% q3
-close all
-clear all
-clc
-c = (1+2/100)^-1; %letra a
-c2 = fasor(1,-4); %letra b
-Yeq = (i*8/100)^-1
-Y11 = Yeq
-Y12 = -c*Yeq
-Y22 = abs(c)^2*Yeq
-Y21 = -conj(c)*Yeq
-
-
-BY11 = Yeq
-BY12 = -c2*Yeq
-BY22 = abs(c2)^2*Yeq
-BY21 = -conj(c2)*Yeq
