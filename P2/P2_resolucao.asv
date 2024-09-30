@@ -69,16 +69,50 @@ close all
 clear all
 clc
 %Questão 4
-
 Vb = 34.5e3;
 Sb = 500e6;
-Ib = 
+Ib = Sb/(sqrt(3)*Vb);
 Xd = 1i*2;
 Vt = fasor(1,0);
-Ia = 
+Ia = fasor_rad(8530/Ib,-acos(0.85));
+Ei = Vt + Ia*Xd;
+moduloEi = abs(Ei);
+faseEi = rad2deg(angle(Ei))
+plot_3_fasores(Ei,Vt,Ia)
+S = sqrt(3)*Vt*Ia
+P = real(S)
+Q = imag(S)
+gama_novo = rad2deg(asin(sin(angle(Ei))/1.15))
+plot_4_fasores(Vt,Ei,Ia,fasor(Ei,gama_novo))
+%%
+close all
+clear all
+clc
+S1 = 33e6;
+V1 = 138e3;
+I1 = S1/(sqrt(3)*V1);
+Z1 = V1/I1;
+S2 = 20e6;
+V2 = 34.5e3;
+I2 = S2/(sqrt(3)*V2);
+Z2 = V2/I2;
 
+Xps = 0.05*Z1; %Ohms
+Xpt = 0.06*Z1; %Ohms
+Xst = 0.1*Z2;   %Ohms
 
+Zp = 0.5*(Xps+Xpt-Xst);
+Zs = 0.5*(Xps+Xst-Xpt);
+Zt = 0.5*(Xpt+Xst-Xps);
 
+Sb = 100e6;
+Vb = 345e3;
+Ib = Sb/(sqrt(3)*Vb);
+Zb = 1i*Vb/Ib;
+
+Zp_pu = Zp/Zb
+Zs_pu = Zs/Zb
+Zt_pu = Zt/Zb
 
 
 
